@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "JavaScript development environment Pluralsight course by Cory House",
   "scripts": {
-    "prestart": "node buildScripts/startMessage.js",
-    "start": "node buildScripts/srcServer.js",
-    "stop": "node buildScripts/stopMessage.js",
+    "prestart": "babel-node buildScripts/startMessage.js",
+    "start": "babel-node buildScripts/srcServer.js",
+    "stop": "babel-node buildScripts/stopMessage.js",
     "localtunnel": "lt --port 3030  --subdomain adamski",
-    "start:all": "npm-run-all --parallel start localtunnel"
+    "openlocaltunnel": "babel-node buildScripts/srcLocalTunnel.js",
+    "start:all": "npm-run-all --parallel start localtunnel openlocaltunnel"
   },
   "author": "Cory House",
   "license": "MIT",
