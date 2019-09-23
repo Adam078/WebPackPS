@@ -1,4 +1,4 @@
-import css from '../style/index.css'; // eslint-disable-line
+import '../style/index.css'
 import _ from 'lodash'
 
 
