@@ -1,3 +1,3 @@
-import chalk  form 'chalk';
+import chalk  from 'chalk'
 
-console.log(chalk.red("Webserver stopped..."))
+console.log(chalk.red("Webserver stopped...")) // eslint-disable-line

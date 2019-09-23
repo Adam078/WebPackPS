@@ -6,16 +6,22 @@
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "babel-node buildScripts/srcServer.js",
     "stop": "babel-node buildScripts/stopMessage.js",
+    "lint": "esw webpack.config.* src buildScripts --color",
+    "lint:watch": "npm run lint -- --watch",
     "localtunnel": "lt --port 3030  --subdomain adamski",
     "openlocaltunnel": "babel-node buildScripts/srcLocalTunnel.js",
-    "start:all": "npm-run-all --parallel start localtunnel openlocaltunnel"
+    "start:all": "npm-run-all --parallel start localtunnel openlocaltunnel lint:watch"
   },
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {
+    "eslint-config-vue-preset": "^0.1.0",
+    "lodash": "^4.17.15",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
