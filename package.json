@@ -10,14 +10,18 @@
     "lint:watch": "npm run lint -- --watch",
     "localtunnel": "lt --port 3030 --subdomain adamski",
     "openlocaltunnel": "babel-node buildScripts/srcLocalTunnel.js",
-    "start:all": "npm-run-all --parallel start localtunnel openlocaltunnel lint:watch test:watch",
+    "start:all": "npm-run-all --parallel start localtunnel openlocaltunnel lint:watch test:watch start-mockapi",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "generate-mock-data": "babel-node buildScripts/generateMockdata",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001"
   },
   "author": "Adam Czepiel",
   "license": "MIT",
   "dependencies": {
     "eslint-config-vue-preset": "^0.1.0",
+    "faker": "^4.1.0",
     "lodash": "^4.17.15",
     "whatwg-fetch": "^3.0.0"
   },

@@ -1,11 +1,32 @@
 import '../style/index.css'
 import _ from 'lodash'
+import { getUsers, deleteUser } from '../api/userApi';
+
+getUsers().then(result => {
+  let userBody = "";
+
+  _.forEach(result,(user)=>{
+    userBody += `<tr>
+        <td><a href="#" data-id="${user.id}" class="deleteUser">Delete</td>
+        <td>${user.firstName}</td>
+        <td>${user.lastName}</td>
+        <td>${user.email}</td>
+        </tr>
+    `;
+  });
+
+  global.document.getElementById('users').innerHTML = userBody;
+});
 
 
-function printConsole(){
-  const courseValue = 1000
-  console.log(`I would pay ${courseValue} for this awesome course! We have year ${new Date(_.now()).getFullYear()}`) // eslint-disable-line
-}
+const deleteLinks = global.document.getElementsByClassName('deleteUser');
 
-printConsole()
-
+Array.from(deleteLinks, link =>{
+  link.onclick = function(event){
+    const element = event.target;
+    event.preventDefault();
+    deleteUser(element.attributes["data-id"].value);
+    const row = element.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+  }
+});
