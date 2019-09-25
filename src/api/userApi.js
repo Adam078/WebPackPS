@@ -7,7 +7,7 @@ export function getUsers() {
 }
 
 export function deleteUser(id){
-  return del(`users/${id}`); // eslint-disable-line
+  return del(`users/${id}`);
 }
 
 function del(url){
