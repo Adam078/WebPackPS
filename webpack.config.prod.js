@@ -1,22 +1,26 @@
-const path = require('path')
-var HTMLWebpackPlugin = require('html-webpack-plugin');
-
+import path  from 'path'
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+import HTMLWebpackPlugin from 'html-webpack-plugin';
 
 module.exports = {
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   entry: [
     path.resolve(__dirname, 'src/scripts/index')
   ],
   target: 'web',
   output: {
-    path: path.resolve(__dirname, 'src'),
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: 'bundle.js'
+  },
+  optimization: {
+    minimizer: [new UglifyJsPlugin()]
   },
   plugins: [
     new HTMLWebpackPlugin({
       template: 'src/index.html',
+      minify: true,
       inject: true
     })
   ],

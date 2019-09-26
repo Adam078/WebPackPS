@@ -7,6 +7,7 @@ getUsers().then(result => {
 
   _.forEach(result,(user)=>{
     userBody += `<tr>
+        <td>&nbsp;</td>
         <td><a href="#" data-id="${user.id}" class="deleteUser">Delete</td>
         <td>${user.firstName}</td>
         <td>${user.lastName}</td>
@@ -27,7 +28,7 @@ getUsers().then(result => {
       const row = element.parentNode.parentNode;
       row.parentNode.removeChild(row);
     }
-});
+  });
 });
 
 

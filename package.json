@@ -15,7 +15,11 @@
     "test:watch": "npm run test -- --watch",
     "generate-mock-data": "babel-node buildScripts/generateMockdata",
     "prestart-mockapi": "npm run generate-mock-data",
-    "start-mockapi": "json-server --watch src/api/db.json --port 3001"
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001",
+    "clean-dist": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm-run-all clean-dist test lint",
+    "build": "babel-node buildScripts/build.js",
+    "postbuild": "babel-node buildScripts/distServer.js"
   },
   "author": "Adam Czepiel",
   "license": "MIT",
@@ -23,6 +27,7 @@
     "eslint-config-vue-preset": "^0.1.0",
     "faker": "^4.1.0",
     "lodash": "^4.17.15",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
