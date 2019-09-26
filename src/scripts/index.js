@@ -1,4 +1,4 @@
-import '../style/index.css'
+import css from '../style/index.css' // eslint-disable-line no-unused-vars
 import _ from 'lodash'
 import { getUsers, deleteUser } from '../api/userApi';
 

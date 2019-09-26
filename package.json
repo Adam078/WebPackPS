@@ -25,8 +25,10 @@
   "license": "MIT",
   "dependencies": {
     "eslint-config-vue-preset": "^0.1.0",
+    "extract-loader": "^3.1.0",
     "faker": "^4.1.0",
     "lodash": "^4.17.15",
+    "mini-css-extract-plugin": "^0.8.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "whatwg-fetch": "^3.0.0"
   },

@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/style/index.css"],"names":[],"mappings":"AAAA;AACA;AACA","file":"main.css","sourcesContent":[".welcome{\n  color: darkgrey;\n}\n"],"sourceRoot":""}
