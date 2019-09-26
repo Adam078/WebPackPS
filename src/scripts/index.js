@@ -1,6 +1,13 @@
 import css from '../style/index.css' // eslint-disable-line no-unused-vars
 import _ from 'lodash'
 import { getUsers, deleteUser } from '../api/userApi';
+import { TrackJS } from 'trackjs';
+TrackJS.install({
+  token: "9b8829ab5452413fb19d88946cb4609e",
+  application: "webpack"
+});
+
+TrackJS.track('Testing TrackJS!');
 
 getUsers().then(result => {
   let userBody = "";
@@ -20,7 +27,7 @@ getUsers().then(result => {
 
   const deleteLinks = global.document.getElementsByClassName('deleteUser');
 
-  Array.from(deleteLinks, link =>{
+  Array.from(deleteLinks, link => {
     link.onclick = function(event){
       const element = event.target;
       event.preventDefault();
@@ -29,6 +36,7 @@ getUsers().then(result => {
       row.parentNode.removeChild(row);
     }
   });
+
 });
 
 

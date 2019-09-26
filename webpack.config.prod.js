@@ -36,7 +36,8 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: 'src/index.html',
       minify: true,
-      inject: true
+      inject: true,
+      trackJSToken: "9b8829ab5452413fb19d88946cb4609e"
     }),
   ],
   module: {

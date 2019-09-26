@@ -244,9 +244,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _api_userApi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api/userApi */ "./src/api/userApi.js");
+/* harmony import */ var trackjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! trackjs */ "./node_modules/trackjs/index.esm.js");
  // eslint-disable-line no-unused-vars
 
 
+
+trackjs__WEBPACK_IMPORTED_MODULE_3__["TrackJS"].install({
+  token: "9b8829ab5452413fb19d88946cb4609e",
+  application: "webpack"
+});
+
+trackjs__WEBPACK_IMPORTED_MODULE_3__["TrackJS"].track('Testing TrackJS!');
 
 Object(_api_userApi__WEBPACK_IMPORTED_MODULE_2__["getUsers"])().then(result => {
   let userBody = "";
@@ -266,7 +274,7 @@ Object(_api_userApi__WEBPACK_IMPORTED_MODULE_2__["getUsers"])().then(result => {
 
   const deleteLinks = global.document.getElementsByClassName('deleteUser');
 
-  Array.from(deleteLinks, link =>{
+  Array.from(deleteLinks, link => {
     link.onclick = function(event){
       const element = event.target;
       event.preventDefault();
@@ -275,6 +283,7 @@ Object(_api_userApi__WEBPACK_IMPORTED_MODULE_2__["getUsers"])().then(result => {
       row.parentNode.removeChild(row);
     }
   });
+
 });
 
 
@@ -296,4 +305,4 @@ Object(_api_userApi__WEBPACK_IMPORTED_MODULE_2__["getUsers"])().then(result => {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=main.a2d08c44c42c6ecc903e.js.map
+//# sourceMappingURL=main.9d5fde693771e1bfcc6b.js.map
